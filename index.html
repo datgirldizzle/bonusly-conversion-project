@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Bonusly Conversion Project</title>
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.css">
+  </head>
+  <body>
+  
+    <div class="main-header">
+      <h1 class="ui white inverted center aligned icon header">
+        <i class="circular users icon"></i>
+        Bonusly Conversion Project
+      </h1>
+    </div>
+
+
+    <div class="ui two column centered grid">
+      <div class="column align-center">
+        <div class="name-effect">
+          <br />Enter the total points for each participant into the conversion chart below.<br />
+          A percentage for each entry will be automatically calculated when you click the Calculate button.
+          The calculated number is the percentage of points that a participant has earned out of a total of 1,050 points.<br />
+          Select the Wellness or Training button on the shortcode box.
+          This will print the points to be allocated as well as send a message to the appropriate Slack channel.
+        </div>
+      </div>
+
+<!--Rows are hardcoded since there are only a few of them-->      
+      <div class="ui four column centered row">
+        <div class="column">
+          <div class="name-effect">Artem</div>
+        </div>
+        <div class="column align-center">
+          <div class="ui input">
+            <input id="artem" type="text" placeholder="Enter Points...">
+          </div>
+        </div>
+        <div class="column">
+            <div id="artem-percentage" class="align-center percent-container">
+            </div>
+          </div>
+      </div>
+
+      <div class="ui four column centered row">
+        <div class="column">
+          <div class="name-effect">Dave</div>
+        </div>
+        <div class="column align-center">
+          <div class="ui input">
+            <input id="dave" type="text" placeholder="Enter Points...">
+          </div>
+        </div>
+        <div class="column">
+            <div id="dave-percentage" class="align-center percent-container">
+            </div>
+          </div>
+      </div>
+
+      <div class="ui four column centered row">
+        <div class="column">
+          <div class="name-effect">Dorian</div>
+        </div>
+        <div class="column align-center">
+          <div class="ui input">
+            <input id="dorian" type="text" placeholder="Enter Points...">
+          </div>
+        </div>
+        <div class="column">
+            <div id="dorian-percentage" class="align-center percent-container">
+            </div>
+          </div>
+      </div>
+
+      <div class="ui four column centered row">
+        <div class="column">
+          <div class="name-effect">Hung</div>
+        </div>
+        <div class="column align-center">
+          <div class="ui input">
+            <input id="hung" type="number" placeholder="Enter Points...">
+          </div>
+        </div>
+        <div class="column">
+            <div id="hung-percentage" class="align-center percent-container">
+            </div>
+          </div>
+      </div>
+      
+      <div class="ui four column centered row">
+        <div class="column">
+          <div class="name-effect">Justin</div>
+        </div>
+        <div class="column align-center">
+          <div class="ui input">
+            <input id="justin" type="text" placeholder="Enter Points...">
+          </div>
+        </div>
+        <div class="column">
+            <div id="justin-percentage" class="align-center percent-container">
+            </div>
+          </div>
+      </div>
+      
+      <div class="ui four column centered row">
+        <div class="column">
+          <div class="name-effect">Michelle</div>
+        </div>
+        <div class="column align-center">
+          <div class="ui input">
+            <input id="michelle" type="text" placeholder="Enter Points...">
+          </div>
+        </div>
+        <div class="column">
+            <div id="michelle-percentage" class="align-center percent-container">
+            </div>
+          </div>
+      </div>
+
+      <div class="ui four column centered row">
+        <div class="column">
+          <div class="name-effect">Nate</div>
+        </div>
+        <div class="column align-center">
+          <div class="ui input">
+            <input id="nate" type="text" placeholder="Enter Points...">
+          </div>
+        </div>
+        <div class="column">
+            <div id="nate-percentage" class="align-center percent-container">
+            </div>
+          </div>
+      </div>
+<!-- Total Row here -->
+      <div class="ui four column centered row last-row">
+          <div class="column">
+            <div class="name-effect">Total</div>
+          </div>
+          <div class="column align-center">
+            <div id="total-points" class="align-center percent-container">
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="align-center">
+              <div class="ui left action input">
+                <button onclick="myFunction('total-points')" class ="ui violet labeled icon button purple-button"><i class="percent icon"></i>Calculate</button>
+              </div>
+            </div>
+          </div>
+      </div>
+
+                
+
+<!--modal-->
+      <div id="modal" class="ui basic centered modal">
+        <div id="icon" class="ui icon header slack-it">
+          <i class="slack icon white"></i>
+        </div>
+        <div class="content align-center">
+          <h4>Your points have been calculated. Would you like to send the shortcode to the appropriate Slack Channel?</h4>
+        </div>
+        <div class="actions align-center">
+          <div id="red-button" onclick="redButton()" class="ui red inverted cancel button">
+            <i class="remove icon"></i>
+            No
+          </div>
+          <div id="green-button" onclick="greenButton()" class="ui green ok button">
+            <i class="checkmark icon"></i>
+            Yes
+          </div>
+        </div>
+      </div>
+              
+<!--Shortcode box-->           
+      <div class="ui top attached header main-header"><h2 class="code">Shortcode:</bold></h2>
+<!--go back button-->
+            <button id="undo" onclick="activateModal()" class="ui disabled button">
+                <i class="undo icon"></i>
+                Go Back
+              </button>
+            
+        <button id="wellness-button" onclick="printShortCodeWellness('Wellness')" class="ui button">Print Wellness</button>
+        <button id="training-button" onclick="printShortCodeWellness('Training')" class="ui button">Print Training</button>
+        <div class="ui attached segment">
+          <div id ="slack-box" class="box">
+          </div>
+        </div>
+      </div>
+
+              
+
+    <script src="main.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.js"></script>
+  </body>
+</html>

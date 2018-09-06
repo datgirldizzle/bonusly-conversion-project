@@ -1,0 +1,93 @@
+
+.main-header {
+  background: linear-gradient(to bottom right, #742AFF 0%, #A344FF 100%) !important;
+  margin-top: 20px !important;
+  padding: 20px 20px 20px 20px !important;
+  
+}
+
+.main-border  {
+  border: 5px, solid, rgba(163,68,255, 0.9) !important;
+}
+
+.align-center  {
+  text-align: center !important;
+  padding-right: 45px !important;
+}
+
+
+.name-effect  {
+  padding: 10px;
+  font-family: Lato;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 40px;
+  color: #65528e;
+}
+
+
+.mod-bottom {
+  padding-bottom: 20px;
+}
+
+.code {
+  color: white;
+}
+  
+.box  {
+  font-family: monospace !important;
+  width: 900px;
+  height: 300px;
+}
+
+/* .last-row {
+  background: linear-gradient(to bottom right, #742AFF 0%, #A344FF 30%) !important;
+  
+} */
+.last-row {
+  background-color: rgba(163,68,255, 0.9) !important;
+  
+}
+
+.percent-container {
+  border: 1px lightgrey solid;
+  width: 180px;
+  height: 38px;
+  border-radius: .28571429rem;
+  line-height: 38px;
+  margin: auto;
+  background-color: white;
+
+
+}
+
+.purple-button  {
+  width: 130% !important;
+  border-top-right-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
+  margin-top: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+
+}
+
+.modal  {
+  display: hide;
+  background-color: white !important;
+  color:black !important;
+}
+
+.archive  {
+  color: black !important;
+}
+
+.slack-it {
+  color:#65528e !important;
+}
+
+.undo-button  {
+ display: inline-block;
+}
+
+
